@@ -1,0 +1,20 @@
+.tabs{
+    margin:0;
+    padding:0;
+    list-style:none; //removes bullets
+    background-color:pink;
+    display:flex; //left to right layout
+    border-bottom: 1px solid black;
+    .tabItem{
+        padding:1rem;
+        font-family: Arial;
+        background-color: limegreen;
+        text-transform: uppercase;
+        color:gray;
+        cursor:pointer;
+        &.active{
+            color:black;
+            border-bottom: 3px solid green;
+        }//active close
+    } //tabItem close
+}//tabs close

@@ -1,0 +1,42 @@
+@use './abstracts/vars';
+@use './abstracts/mixins';
+@use './vendor';
+
+// typographic reset
+h1,h2,h3,h4,h5,h6,p,ul,li {
+	padding:0;
+	margin:0;
+	font:inherit; //inherit settings from parents
+}
+
+ul, ol{
+	list-style: none;
+}
+
+*{ //* = any future selector takes the padding that goes out and inverts it so everything fits
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100vh;
+}
+body {
+	background-color: vars.$SUorange;
+	color: vars.$SUblue;
+	font-family: vars.$font_primary;
+	min-height: 100%;
+	@include mixins.breakpoint(tablet) { //mixins stands for file we are recalling, ref. with '@'
+		background-color: yellow; //do not have to use an element selector bc in 'body'
+		color: blue;
+	}
+	@include mixins.breakpoint(laptop) {
+		background-color: red;
+		color: violet;
+	}
+}
+@media(min-width: 700px){
+	body{background-color:yellow;}
+}
+@media(min-width: 1000px){
+	body{background-color:red;}
+}
